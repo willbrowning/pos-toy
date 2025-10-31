@@ -115,6 +115,11 @@
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
     <script>
         const mainEl = document.querySelector('main');
+        const successSound = new Audio('success.mp3');
+
+        document.addEventListener('click', () => {
+            successSound.play();
+        });
 
         async function watchCameraCover({
             facingMode = "user",
@@ -209,8 +214,6 @@
                             origin: { y: 1 },
                         });
                     }, 500);
-
-                    const successSound = new Audio('success.mp3'); // Create here so it works in iOS
                     setTimeout(function() {
                         successSound.play();
                     }, 250);
