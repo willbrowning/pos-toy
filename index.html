@@ -117,9 +117,15 @@
         const mainEl = document.querySelector('main');
         const successSound = new Audio('success.mp3');
 
-        document.addEventListener('click', () => {
+        document.addEventListener('click', loadSounds);
+
+        function loadSounds() {
             successSound.play();
-        });
+            successSound.pause();
+            successSound.currentTime = 0;
+            document.removeEventListener('click', loadSounds);
+            console.log("Sounds loaded");
+        }
 
         async function watchCameraCover({
             facingMode = "user",
