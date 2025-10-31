@@ -209,8 +209,10 @@
                             scalar: 1.5,
                             origin: { y: 1 },
                         });
-                        successSound.play();
                     }, 500);
+                    setTimeout(function() {
+                        successSound.play();
+                    }, 250);
                 } else {
                 console.log("[camera] Camera appears UNCOVERED.");
                 mainEl.classList.remove('tapped');
