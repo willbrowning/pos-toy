@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>POS Toy</title>
+    <meta name="apple-mobile-web-app-title" content="POS">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <style>
         html {
             height: 100%;
@@ -104,14 +106,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
     <script>
         const mainEl = document.querySelector('main');
-
-        document.addEventListener('click', (event) => {
-            if (!document.fullscreenElement) {
-                document.body.requestFullscreen();
-            } else {
-                document.exitFullscreen?.();
-            }
-        });
 
         async function watchCameraCover({
             facingMode = "user",
